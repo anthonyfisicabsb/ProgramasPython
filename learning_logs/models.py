@@ -20,5 +20,8 @@ class Entry( models.Model ):
 
 	def __str__(self):
 		"""Return a string representing a model"""
-		return self.text[:50] + "..."
+		texto = self.text[:50].join("...") if len(self.text) > 50 else self.text
+
+		return texto
+
 
