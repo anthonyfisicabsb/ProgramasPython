@@ -2,7 +2,7 @@ dominios=dict()
 
 try:
     fhand=open(input('Insira o nome do arquivo: '))
-    
+
     for linha in fhand:
         if linha.startswith('From'):
             linha=linha.split()

@@ -1,23 +1,24 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-lim = 0.00001
+lim = 0.000001
 
 
 def create_graph(x, y, y2, y3, y4):
     plt.ylabel('y')
     plt.xlabel('x')
-    plt.plot(x, y,  'bo')
-    plt.plot(x, y2, 'g+')
-    plt.plot(x, y3, 'ro')
-    plt.plot(x, y4, 'b-')
+    plt.plot(x, y)
+    plt.plot(x, y2)
+    plt.plot(x, y3)
+    plt.plot(x, y4, linestyle='dashed')
     plt.title('Derivacao Numerica')
     plt.legend(['progr1', 'central2', '2deriv', 'original'])
+    plt.grid()
     plt.show()
 
 
 def funcao(x):
-    return np.sin(x) 
+    return x*x*x*x;
 
 
 def lista_funcao(x):
@@ -27,6 +28,7 @@ def lista_funcao(x):
         y_list.append(funcao(num))
 
     return y_list
+
 
 def finiteDif(x):
     y_list = []
@@ -87,10 +89,10 @@ def secondDif(x):
 
 if __name__ == '__main__':
     x_list = []
-    numero = -3.1415
-    while numero <= 3.1415:
+    numero = -1.3
+    while numero <= 1.3:
         x_list.append(numero)
-        numero += 0.0001
+        numero += 0.001
 
     create_graph(x_list, finiteDif(x_list),
-                 finitecCentralDif(x_list), secondDif(x_list), lista_funcao(x_list))
+            finitecCentralDif(x_list), secondDif(x_list), lista_funcao(x_list))
