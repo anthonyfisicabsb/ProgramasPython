@@ -18,14 +18,17 @@ def create_graph(x, y, y2, y3, y4):
 
 
 def funcao(x):
-    return x*x*x*x;
+    return np.sin(x);
+
+def func(x):
+    return np.cos(x);
 
 
 def lista_funcao(x):
     y_list = []
 
     for num in x:
-        y_list.append(funcao(num))
+        y_list.append(func(num))
 
     return y_list
 
@@ -89,8 +92,8 @@ def secondDif(x):
 
 if __name__ == '__main__':
     x_list = []
-    numero = -1.3
-    while numero <= 1.3:
+    numero = -3.14
+    while numero <= 3.14:
         x_list.append(numero)
         numero += 0.001
 
