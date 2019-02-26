@@ -6,7 +6,7 @@ if __name__ == '__main__':
     root = Node([random.randint(-1000, 1001), random.randint(-1000, 1001)], True)
     kd_tree = Kd_Tree(root)
 
-    for i in range(1):
+    for i in range(100):
         node = Node([random.randint(-1000, 1001), random.randint(-1000, 1001)], True)
         kd_tree.add_node(node)
 
